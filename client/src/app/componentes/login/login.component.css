@@ -1,0 +1,121 @@
+.container {
+  background-color: #252525;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+.container__login{
+  width: 50%;
+  height: 75vh;
+  margin: auto;
+  padding-top: 50px;
+}
+
+.container__login__logo{
+  background-image: url('../../../assets/logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 60%;
+  height: 50%;
+  background-color: #252525;
+  margin: auto;
+  margin-bottom: 10px;
+  /* border: 1px solid red; */
+}
+
+.container__login__form{
+  /* border: 1px solid red; */
+}
+
+.container__login__form__inputs{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: var(--roboto-simples);
+}
+
+.container__login__form__inputs label{
+  color: #F2F2F2;
+  font-family: var(--roboto-simples);
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.container__login__form__inputs input{
+  width: 50%;
+  margin: auto;
+  margin-top: 10px;
+  border-radius: 20px;
+  padding-left: 10px;
+  height: 25px;
+  font-family: var(--roboto-simples);
+}
+
+.container__login__form__inputs input::placeholder{
+  font-family: var(--roboto-simples);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.container__login__form__button{
+  width: 100%;
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.container__login__form__button .botao-login{
+  width: 120px;
+  height: 50px;
+  font-family: var(--roboto-simples);
+  font-size: 1.2rem;
+  border-radius: 12px;
+  font-weight: 700;
+  background-color: #A5A5A5;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 480px) {
+  .container__login{
+    width: 100%;
+  }
+  .container__login__form__inputs input{
+    width: 90%;
+  }
+  .container__login__logo{
+    width: 90%;
+    height: 50%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container__login{
+    width: 100%;
+  }
+  .container__login__form__inputs input{
+    width: 60%;
+  }
+  .container__login__logo{
+    width: 90%;
+    height: 50%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .container__login{
+    width: 100%;
+  }
+  .container__login__form__inputs input{
+    width: 30%;
+  }
+  .container__login__logo{
+    width: 90%;
+    height: 50%;
+  }
+}
