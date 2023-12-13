@@ -2,19 +2,17 @@
   <div class="container__login">
     <div class="container__login__logo"></div>
     <form class="container__login__form">
-
       <div class="container__login__form__inputs">
         <label for="usuario">Usuario</label>
         <input type="text" id="usuario" name="usuario" placeholder="Digite seu usuario...">
       </div>
-
       <div class="container__login__form__inputs">
         <label for="senha">Senha</label>
         <input type="password" id="senha" name="senha" placeholder="Digite sua senha...">
       </div>
+      <div class="container__login__form__button">
+        <button (click)="fazerLogin()" class="botao-login">Login</button>
+      </div>
     </form>
-  </div>
-  <div class="container__login__form__button">
-    <button (click)="fazerLogin()" class="botao-login">Login</button>
   </div>
 </section>

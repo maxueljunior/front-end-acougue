@@ -10,7 +10,7 @@ export class LoginService {
 
   constructor(private http: HttpClient) { }
 
-  private URL_API = "/login";
+  private URL_API = "/api/login";
 
   public fazerLogin(): Observable<Login>{
     console.log('chegou aqui.')
