@@ -1,0 +1,25 @@
+<div class="container">
+  <header>
+    <div class="cabecalho">
+      <div class="cabecalho__logo">
+      </div>
+      <ul class="cabecalho__items">
+        <li>Home</li>
+      </ul>
+      <ul class="cabecalho__items">
+        <li>Fornecedor</li>
+        <li>Clientes</li>
+      </ul>
+      <ul class="cabecalho__items">
+        <li>Sair</li>
+      </ul>
+    </div>
+  </header>
+  <section>
+    <div class="cards">
+      <div @buscandoFornecedoresAnimation class="card-fornecedor" *ngFor="let item of infoFornecedor">
+        <app-card-fornecedores [fornecedor]="item"></app-card-fornecedores>
+      </div>
+    </div>
+  </section>
+</div>

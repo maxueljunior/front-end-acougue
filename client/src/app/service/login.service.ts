@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Login } from '../models/ILogin';
+import { Token } from '../models/IToken';
+import { InfoLogin } from '../models/InfoLogin';
 
 @Injectable({
   providedIn: 'root'
@@ -12,11 +13,7 @@ export class LoginService {
 
   private URL_API = "/api/login";
 
-  public fazerLogin(): Observable<Login>{
-    console.log('chegou aqui.')
-    return this.http.post<Login>(this.URL_API, {
-      username: "rodrigo",
-      password: "123",
-    });
+  public fazerLogin(dadosLogin: InfoLogin): Observable<Token>{
+    return this.http.post<Token>(this.URL_API, dadosLogin);
   }
 }

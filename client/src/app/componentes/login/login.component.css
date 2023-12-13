@@ -36,6 +36,12 @@
   font-family: var(--roboto-simples);
 }
 
+.container__login__erro{
+  margin-top: 2px;
+  text-align: center;
+  align-items: center;
+}
+
 .container__login__form__inputs label{
   color: #F2F2F2;
   font-family: var(--roboto-simples);

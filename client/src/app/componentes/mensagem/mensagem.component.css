@@ -1,0 +1,6 @@
+.mensagem__erro{
+  color: red;
+  font-size: 15px;
+  font-family: var(--roboto-simples);
+  font-weight: 700;
+}

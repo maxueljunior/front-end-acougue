@@ -1,18 +1,50 @@
 <section class="container">
   <div class="container__login">
     <div class="container__login__logo"></div>
-    <form class="container__login__form">
+    <form class="container__login__form" #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
       <div class="container__login__form__inputs">
         <label for="usuario">Usuario</label>
-        <input type="text" id="usuario" name="usuario" placeholder="Digite seu usuario...">
+        <input type="text" id="usuario" placeholder="Digite seu usuario..." name="usuario" ngModel required verificaCaracteresEspeciais #usuario="ngModel">
+        <div class="container__login__erro" *ngIf="(usuario?.invalid && usuario?.touched) || usuario?.dirty">
+          <app-mensagem *ngIf="usuario?.errors?.['required']" mensagem="O usuario é obrigatorio"></app-mensagem>
+          <app-mensagem *ngIf="usuario?.errors?.['verificaCaracteresEspeciais']" mensagem="O usuario não pode conter caracteres especiais"></app-mensagem>
+        </div>
       </div>
       <div class="container__login__form__inputs">
         <label for="senha">Senha</label>
-        <input type="password" id="senha" name="senha" placeholder="Digite sua senha...">
+        <input type="password" id="senha" placeholder="Digite sua senha..." name="senha" ngModel required #senha="ngModel">
+        <div class="container__login__erro" *ngIf="(senha?.invalid && senha?.touched) || senha?.dirty">
+          <app-mensagem *ngIf="senha?.errors?.['required']" mensagem="A senha é obrigatoria"></app-mensagem>
+        </div>
+      </div>
+      <div class="container__login__erro" *ngIf="acessoNegado">
+        <app-mensagem [@erroLoginState]="acessoNegado ? 'errorLogin' : 'default'" mensagem="O usuario ou senha estão incorretos"></app-mensagem>
       </div>
       <div class="container__login__form__button">
-        <button (click)="fazerLogin()" class="botao-login">Login</button>
+        <button type="submit" [disabled]="loginForm.form.invalid" class="botao-login">Login</button>
       </div>
     </form>
   </div>
 </section>
+
+<!--
+  -- Neste exemplo abaixo estamos usando formularios de forma reativa definidos no component.ts
+
+  <section class="container">
+  <div class="container__login">
+    <div class="container__login__logo"></div>
+    <form class="container__login__form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="container__login__form__inputs">
+        <label for="usuario">Usuario</label>
+        <input type="text" id="usuario" formControlName="username" placeholder="Digite seu usuario...">
+      </div>
+      <div class="container__login__form__inputs">
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" formControlName="password" placeholder="Digite sua senha...">
+      </div>
+      <div class="container__login__form__button">
+        <button type="submit" [disabled]="!loginForm.valid" class="botao-login">Login</button>
+      </div>
+    </form>
+  </div>
+</section> -->
