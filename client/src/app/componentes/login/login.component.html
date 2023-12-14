@@ -1,4 +1,4 @@
-<section class="container">
+<section class="container" @animacaoInicio>
   <div class="container__login">
     <div class="container__login__logo"></div>
     <form class="container__login__form" #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
@@ -17,8 +17,8 @@
           <app-mensagem *ngIf="senha?.errors?.['required']" mensagem="A senha é obrigatoria"></app-mensagem>
         </div>
       </div>
-      <div class="container__login__erro" *ngIf="acessoNegado">
-        <app-mensagem [@erroLoginState]="acessoNegado ? 'errorLogin' : 'default'" mensagem="O usuario ou senha estão incorretos"></app-mensagem>
+      <div [@erroLoginState]="acessoNegado ? 'failed' : 'unfailed'" class="container__login__erro" *ngIf="acessoNegado">
+        <app-mensagem  mensagem="O usuario ou senha estão incorretos"></app-mensagem>
       </div>
       <div class="container__login__form__button">
         <button type="submit" [disabled]="loginForm.form.invalid" class="botao-login">Login</button>

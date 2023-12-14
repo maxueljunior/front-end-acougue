@@ -2,7 +2,7 @@ import { Component, NgModule } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators, FormsModule, NgForm} from '@angular/forms';
 import { Router } from '@angular/router';
 import { catchError, map, pipe, tap, throwError } from 'rxjs';
-import { erroLogin } from 'src/app/animations';
+import { animacaoInicio, erroLogin } from 'src/app/animations';
 import { Token } from 'src/app/models/IToken';
 import { InfoLogin } from 'src/app/models/InfoLogin';
 import { InfoToken } from 'src/app/models/InfoToken';
@@ -13,7 +13,8 @@ import { LoginService } from 'src/app/service/login.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
   animations: [
-    erroLogin
+    erroLogin,
+    animacaoInicio
   ]
 })
 export class LoginComponent {
@@ -39,7 +40,7 @@ export class LoginComponent {
 
   onSubmit(loginForm: NgForm){
     const dadosLogin = new InfoLogin(loginForm.form.value.usuario, loginForm.form.value.senha);
-
+    this.acessoNegado = false;
     this.service.fazerLogin(dadosLogin).pipe(
       catchError((error) => {
         this.acessoNegado = true;

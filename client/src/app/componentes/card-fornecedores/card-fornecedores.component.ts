@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Content, Fornecedor } from 'src/app/models/IFornecedor';
 import { InfoFornecedor } from 'src/app/models/InfoFornecedor';
 
 @Component({
@@ -10,4 +11,11 @@ export class CardFornecedoresComponent {
 
   @Input()
   fornecedor!: InfoFornecedor;
+
+  @Output()
+  passandoDadosParaOPai = new EventEmitter<any>();
+
+  public mandarDadosParaOPai(texto: string){
+    this.passandoDadosParaOPai.emit(texto);
+  }
 }

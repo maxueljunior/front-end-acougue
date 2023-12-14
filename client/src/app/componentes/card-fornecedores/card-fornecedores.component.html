@@ -1,9 +1,11 @@
-<p>{{ fornecedor.id }}</p>
-<hr>
-<p>{{ fornecedor.razaoSocial }}</p>
-<hr>
-<p>{{ fornecedor.telefone }}</p>
-<hr>
-<p>{{ fornecedor.nomeContato }}</p>
-<hr>
-<p>{{ fornecedor.cnpj }}</p>
+<div class="card-fornecedor">
+    <p>{{ fornecedor.razaoSocial }}</p>
+    <hr>
+    <p>{{ fornecedor.telefone }}</p>
+    <hr>
+    <p>{{ fornecedor.nomeContato }}</p>
+    <hr>
+    <p>{{ fornecedor.cnpj }}</p>
+    <button value="excluir" #excluir (click)="mandarDadosParaOPai(excluir.value + fornecedor.id)">Excluir</button>
+    <button value="editar" #editar (click)="mandarDadosParaOPai(editar.value + fornecedor.id)">Atualizar</button>
+</div>
