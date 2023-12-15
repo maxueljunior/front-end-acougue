@@ -1,0 +1,42 @@
+<div class="container">
+  <header>
+    <div class="cabecalho">
+      <div class="cabecalho__logo">
+      </div>
+      <ul class="cabecalho__items">
+        <li>Home</li>
+      </ul>
+      <ul class="cabecalho__items">
+        <li>Fornecedor</li>
+        <li>Produtos</li>
+      </ul>
+      <ul class="cabecalho__items">
+        <li>Sair</li>
+      </ul>
+    </div>
+  </header>
+  <section>
+    <div>
+      <form class="formulario" [formGroup]="produtoForm" (ngSubmit)="submitProduto()">
+        <div class="formulario__container">
+          <label for="descricao">Descrição produto</label>
+          <input type="text" id="descricao" placeholder="Ex: Maminha com Queijo" formControlName="descricao">
+        </div>
+        <div class="formulario__container">
+          <label for="unidade">Unidade</label>
+          <select id="unidade" formControlName="unidade">
+            <option value="">--- Selecione --- </option>
+            <option value="UN">Unidade</option>
+            <option value="KG">Kilo</option>
+          </select>
+        </div>
+        <button type="submit" [disabled]="!produtoForm.valid">{{ btnName }}</button>
+      </form>
+    </div>
+    <div class="cards">
+      <div *ngFor="let produto of listaProdutos">
+        <app-card-produtos (eventEmitterEdit)="editarProduto($event)" [produto]="produto"></app-card-produtos>
+      </div>
+    </div>
+  </section>
+</div>

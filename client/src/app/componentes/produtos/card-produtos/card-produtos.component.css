@@ -1,0 +1,18 @@
+
+.cards__item{
+  width: 100%;
+  height: 40%;
+  margin: 20px;
+  color: white;
+  font-family: var(--roboto-simples);
+  font-size: 18px;
+  background-color: #717171;
+  border: 2px solid #252525;
+  border-radius: 5px;
+}
+
+.cards__item p{
+  padding-top: 10px;
+  padding-left: 5px;
+  text-align: center;
+}

@@ -14,6 +14,8 @@ import { RouterModule } from '@angular/router';
 import { CabecalhoComponent } from './componentes/cabecalho/cabecalho.component';
 import { CardFornecedoresComponent } from './componentes/card-fornecedores/card-fornecedores.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProdutosComponent } from './componentes/produtos/produtos.component';
+import { CardProdutosComponent } from './componentes/produtos/card-produtos/card-produtos.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ValidaApenasNumerosDirective,
     FornecedorComponent,
     CabecalhoComponent,
-    CardFornecedoresComponent
+    CardFornecedoresComponent,
+    ProdutosComponent,
+    CardProdutosComponent
   ],
   imports: [
     BrowserModule,

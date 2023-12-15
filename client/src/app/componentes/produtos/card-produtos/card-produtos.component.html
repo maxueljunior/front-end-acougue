@@ -1,0 +1,6 @@
+<div class="cards__item">
+  <p>{{ produto?.id }}</p>
+  <p>{{ produto?.descricao }}</p>
+  <p>{{ produto?.unidade }}</p>
+  <button #editar value="editar" (click)="editarProduto(editar.value + produto?.id)">Editar</button>
+</div>

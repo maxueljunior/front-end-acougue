@@ -2,12 +2,14 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './componentes/login/login.component';
 import { FornecedorComponent } from './componentes/fornecedor/fornecedor.component';
+import { ProdutosComponent } from './componentes/produtos/produtos.component';
 
 const routes: Routes = [
   {
     path: "",
-    redirectTo: 'login',
+    // redirectTo: 'login',
     // redirectTo: 'fornecedor',
+    redirectTo: 'produtos',
     pathMatch: 'full'
   },
   {
@@ -17,6 +19,10 @@ const routes: Routes = [
   {
     path: 'fornecedor',
     component: FornecedorComponent
+  },
+  {
+    path: 'produtos',
+    component: ProdutosComponent
   }
 ];
 
